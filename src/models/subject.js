@@ -1,0 +1,9 @@
+
+const mongoose = require('mongoose');
+
+const subjectSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+});
+
+module.exports = mongoose.models.Subject || mongoose.model('Subject', subjectSchema);
